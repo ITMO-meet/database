@@ -1,0 +1,25 @@
+name: Lint Markdown
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install markdownlint
+      run: npm install -g markdownlint-cli
+
+    - name: Lint Markdown files
+      run: markdownlint 'schemas/*.md'
+
+ 
