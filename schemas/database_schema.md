@@ -4,7 +4,7 @@
 
 ```json
 {
-  "_id": ObjectId,  // Автогенерируемый id внутри MongoDB
+  "_id": ObjectId,
   "username" : String,
   "photos": {
     "logo": photoId,
@@ -64,8 +64,7 @@
 
 ```json
 {
-    "_id": ObjectId, // Результат тестирования пользователя
-    "result": String // TODO: Понять, как хранить тесты и связь с RecSys
-
+    "_id": ObjectId,
+    "result": String
 }
 ```
