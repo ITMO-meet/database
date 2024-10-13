@@ -8,7 +8,7 @@
   "_id": ObjectId,  // Автогенерируемый id внутри MongoDB
   "username" : String,
   "photos": {
-    "logo": photoId, // id фотографии
+    "logo": photoId,
     "carousel": [photoId, photoId]
   },
   "bio": String,
@@ -16,7 +16,7 @@
     "tag": [tagId], # id тега
     "person_params": {
       "date_of_birth": ISODate,
-      "gender": Enum,  // Optional enum
+      "gender": Enum,
       "weight": NumberInt,
       "height": NumberInt,
       "hair_color": String,
