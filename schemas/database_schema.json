@@ -17,8 +17,8 @@
         "photos": {
           "type": "object",
           "properties": {
-            "logo": { 
-              "type": "string", 
+            "logo": {
+              "type": "string",
               "description": "ID фотографии лого"
             },
             "carousel": {
@@ -43,8 +43,8 @@
             "person_params": {
               "type": "object",
               "properties": {
-                "date_of_birth": { 
-                  "type": "string", 
+                "date_of_birth": {
+                  "type": "string",
                   "description": "Дата рождения в формате ISODate"
                 },
                 "gender": {

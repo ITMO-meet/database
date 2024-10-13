@@ -19,7 +19,7 @@
       "weight": NumberInt,
       "height": NumberInt,
       "hair_color": String,
-      "zodiac_sign": String 
+      "zodiac_sign": String
     }
   }
 }
