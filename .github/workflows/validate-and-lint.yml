@@ -24,8 +24,11 @@ jobs:
     - name: Install Prettier
       run: npm install -g prettier
 
-    - name: Format Markdown schemas with Prettier
-      run: prettier --check 'schemas/*.md'.
+    - name: Format Markdown files with Prettier
+      run: prettier --check 'schemas/*.md' && prettier --check 'README.md'
+
+    - name: Format README.md with Prettier
+      run: prettier --check 'schemas/*.md'
 
     - name: Format JSON Schema with Prettier
       run: prettier --check 'schemas/*.json'
