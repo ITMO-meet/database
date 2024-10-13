@@ -7,7 +7,7 @@
       "type": "object",
       "properties": {
         "_id": {
-          "type": "string",
+          "type": "number",
           "description": "Автогенерируемый ObjectId внутри MongoDB"
         },
         "username": {
@@ -18,12 +18,12 @@
           "type": "object",
           "properties": {
             "logo": {
-              "type": "string",
+              "type": "number",
               "description": "ID фотографии лого"
             },
             "carousel": {
               "type": "array",
-              "items": { "type": "string" },
+              "items": { "type": "number" },
               "description": "Список ID фотографий карусели"
             }
           }
@@ -37,7 +37,7 @@
           "properties": {
             "tag": {
               "type": "array",
-              "items": { "type": "string" },
+              "items": { "type": "number" },
               "description": "ID тега"
             },
             "person_params": {
@@ -53,11 +53,11 @@
                   "description": "Пол"
                 },
                 "weight": {
-                  "type": "integer",
+                  "type": "number",
                   "description": "Вес"
                 },
                 "height": {
-                  "type": "integer",
+                  "type": "number",
                   "description": "Рост"
                 },
                 "hair_color": {
@@ -79,7 +79,7 @@
       "type": "object",
       "properties": {
         "_id": {
-          "type": "string",
+          "type": "number",
           "description": "ID тега"
         },
         "tag_text": {
@@ -101,15 +101,15 @@
       "type": "object",
       "properties": {
         "_id": {
-          "type": "string",
+          "type": "number",
           "description": "ID матча"
         },
         "user1_id": {
-          "type": "string",
+          "type": "number",
           "description": "ID первого пользователя"
         },
         "user2_id": {
-          "type": "string",
+          "type": "number",
           "description": "ID второго пользователя"
         },
         "createdAt": {
@@ -127,16 +127,16 @@
       "type": "object",
       "properties": {
         "_id": {
-          "type": "string",
+          "type": "number",
           "description": "ID записи"
         },
         "user_id": {
-          "type": "string",
+          "type": "number",
           "description": "ID пользователя"
         },
         "liked_ids": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": { "type": "number" },
           "description": "Список ID понравившихся пользователей"
         }
       }
@@ -145,7 +145,7 @@
       "type": "object",
       "properties": {
         "_id": {
-          "type": "string",
+          "type": "number",
           "description": "ID результата теста"
         },
         "result": {
