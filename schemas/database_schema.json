@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Database Schema",
+  "type": "object",
+  "properties": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "Автогенерируемый ObjectId внутри MongoDB"
+        },
+        "username": {
+          "type": "string",
+          "description": "Имя пользователя"
+        },
+        "photos": {
+          "type": "object",
+          "properties": {
+            "logo": { 
+              "type": "string", 
+              "description": "ID фотографии лого"
+            },
+            "carousel": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Список ID фотографий карусели"
+            }
+          }
+        },
+        "bio": {
+          "type": "string",
+          "description": "Описание профиля"
+        },
+        "tags": {
+          "type": "object",
+          "properties": {
+            "tag": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "ID тега"
+            },
+            "person_params": {
+              "type": "object",
+              "properties": {
+                "date_of_birth": { 
+                  "type": "string", 
+                  "description": "Дата рождения в формате ISODate"
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": ["male", "female", "other"],
+                  "description": "Пол"
+                },
+                "weight": {
+                  "type": "integer",
+                  "description": "Вес"
+                },
+                "height": {
+                  "type": "integer",
+                  "description": "Рост"
+                },
+                "hair_color": {
+                  "type": "string",
+                  "description": "Цвет волос"
+                },
+                "zodiac_sign": {
+                  "type": "string",
+                  "description": "Знак зодиака"
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": ["username", "photos"]
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "ID тега"
+        },
+        "tag_text": {
+          "type": "string",
+          "description": "Текст тега"
+        },
+        "is_special": {
+          "type": "string",
+          "enum": ["added_by_user", "shadow", "preferred_gender"],
+          "description": "Категория тега (добавленный, теневой, предпочитаемый пол)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Описание тега"
+        }
+      }
+    },
+    "Match": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "ID матча"
+        },
+        "user1_id": {
+          "type": "string",
+          "description": "ID первого пользователя"
+        },
+        "user2_id": {
+          "type": "string",
+          "description": "ID второго пользователя"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Дата создания матча в формате ISODate"
+        },
+        "isActive": {
+          "type": "string",
+          "enum": ["active", "blocked"],
+          "description": "Статус матча (активен/заблокирован)"
+        }
+      }
+    },
+    "Liked": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "ID записи"
+        },
+        "user_id": {
+          "type": "string",
+          "description": "ID пользователя"
+        },
+        "liked_ids": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Список ID понравившихся пользователей"
+        }
+      }
+    },
+    "TestResult": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "ID результата теста"
+        },
+        "result": {
+          "type": "string",
+          "description": "Результат теста пользователя"
+        }
+      }
+    }
+  }
+}
