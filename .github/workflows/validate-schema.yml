@@ -25,6 +25,6 @@ jobs:
       - name: Install AJV CLI
         run: npm install -g ajv-cli
 
-      - name: Validate JSON Schemas
+      - name: Compile JSON Schemas
         run: |
-          ajv validate -s schemas/*.json --strict
+          ajv compile -s schemas/*.json --strict
